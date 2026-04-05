@@ -1,28 +1,29 @@
-class MathService:
+class CalculatorService:
     """
-    Service implementing requirements from Jira MDP-7: Addition of 2 numbers
+    Service implementation for Jira Ticket MDP-7: Addition of 2 numbers
     """
-    def add(self, a, b):
+    
+    def add(self, a: float, b: float) -> float:
         """
         Adds two numbers together.
         
         Args:
-            a (int, float): First number
-            b (int, float): Second number
+            a (float): The first number.
+            b (float): The second number.
             
         Returns:
-            int, float: The sum of a and b
+            float: The sum of a and b.
         """
         return a + b
 
 # --- Example Usage ---
 if __name__ == "__main__":
-    service = MathService()
+    service = CalculatorService()
     
-    num1 = 5
-    num2 = 10
-    result = service.add(num1, num2)
+    # Test case 1: Positive integers
+    result1 = service.add(5, 10)
+    print(f"Addition of 5 + 10 = {result1}") # Expected: 15
     
-    print(f"Jira Ticket MDP-7: Addition of 2 numbers")
-    print(f"Input: {num1}, {num2}")
-    print(f"Result: {result}")
+    # Test case 2: Floating point numbers
+    result2 = service.add(2.5, 4.1)
+    print(f"Addition of 2.5 + 4.1 = {result2}") # Expected: 6.6
